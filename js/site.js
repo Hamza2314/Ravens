@@ -187,6 +187,12 @@
   });
 
   /** Replace {tokens} in a string (plain text). */
+  // A value counts as "filled" once it's set and no longer a TODO_ placeholder
+  const isFilled = (v) => hasValue(v) && !isTodo(v);
+  const emailReady = () => isFilled(vars.email);
+  // Texts that only make sense with a support email (e.g. "email us at {email}") are left out until it's filled in
+  const needsMissingEmail = (text) => !emailReady() && /\{email\}/.test(typeof text === 'string' ? text : JSON.stringify(text || ''));
+
   const tpl = (str, extra = {}) =>
     String(str == null ? '' : str).replace(/\{(\w+)\}/g, (m, key) => {
       const v = key in extra ? extra[key] : vars[key];
@@ -306,6 +312,8 @@
       if (el.hasAttribute('data-mailto') && hasValue(v) && !isTodo(v)) el.setAttribute('href', `mailto:${v}`);
     });
     $$('[data-if]', scope).forEach((el) => { el.hidden = !hasValue(vars[el.dataset.if]); });
+    // data-if-filled="email": hidden while the value is empty OR still a TODO_ placeholder
+    $$('[data-if-filled]', scope).forEach((el) => { el.hidden = !isFilled(vars[el.dataset.ifFilled]); });
     $$('[data-rich]', scope).forEach((el) => {
       const v = get(C, el.dataset.rich);
       if (hasValue(v)) el.replaceChildren(rich(v));
@@ -328,7 +336,7 @@
     $$('[data-render="delivery-times"]').forEach((tbody) => {
       tbody.replaceChildren(...rows.map((r) => h('tr', null, h('td', null, r.region), h('td', null, r.time || ''))));
     });
-    const steps = (get(C, 'success.steps') || []).filter(hasValue);
+    const steps = (get(C, 'success.steps') || []).filter((s) => hasValue(s) && !needsMissingEmail(s));
     $$('[data-render="success-steps"]').forEach((ul) => {
       ul.replaceChildren(...steps.map((s) => h('li', null, icon('check', 18), h('span', null, rich(s)))));
       ul.hidden = !steps.length;
@@ -522,7 +530,7 @@
      Public API for page scripts (product.js)
      ------------------------------------------------------------------ */
   window.Ravens = {
-    C, L, $, $$, h, get, tpl, rich, icon, stars, emailLink, isTodo, hasValue,
+    C, L, $, $$, h, get, tpl, rich, icon, stars, emailLink, isTodo, hasValue, isFilled, emailReady, needsMissingEmail,
     fmtPrice, fmtNum, fmtDate, vars, on, emit, reducedMotion,
     mode: MODE, W, isLaunchPending, launchAt,
     isSaleActive, discountPct, currentPrice, regular, salePrice, saleEnd

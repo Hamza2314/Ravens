@@ -133,7 +133,7 @@
             <li><a href="legal-notice.html">Legal notice</a></li>
           </ul>
         </nav>
-        <div>
+        <div data-if-filled="email">
           <h2 class="footer__heading">Contact</h2>
           <div class="footer__contact">
             <a data-var="email" data-mailto href="#">TODO_SUPPORT_EMAIL</a>
@@ -143,7 +143,7 @@
       </div>
       <div class="footer__bottom">
         <p data-cfg="footer.note"></p>
-        <p>© <span data-var="year"></span> <span data-cfg="brand.name">Ravens Accessories</span> · <span data-var="companyName"></span></p>
+        <p>© <span data-var="year"></span> <span data-cfg="brand.name">Ravens Accessories</span><span data-if-filled="companyName"> · <span data-var="companyName"></span></span></p>
       </div>
     </div>
   </footer>

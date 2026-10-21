@@ -320,7 +320,7 @@
 
   function renderTrust() {
     const list = $('#trust-list');
-    const items = ((WISHLIST ? W.trust : C.trust) || []).filter((t) => t && hasValue(t.title));
+    const items = ((WISHLIST ? W.trust : C.trust) || []).filter((t) => t && hasValue(t.title) && !R.needsMissingEmail(t));
     if (!items.length) { $('#trust').hidden = true; return; }
     list.style.setProperty('--cols', String(Math.min(items.length, 5)));
     list.replaceChildren(...items.map((t) =>
@@ -497,7 +497,7 @@
   }
 
   function renderFaq() {
-    const items = ((WISHLIST ? W.faq : C.faq) || []).filter((f) => f && hasValue(f.q) && f.a);
+    const items = ((WISHLIST ? W.faq : C.faq) || []).filter((f) => f && hasValue(f.q) && f.a && !R.needsMissingEmail(f));
     if (!items.length) { $('#faq').hidden = true; return; }
     $('#faq-list').replaceChildren(...items.map((f) =>
       h('details', { class: 'faq__item' },
@@ -563,6 +563,8 @@
     const formUrl = typeof B.formUrl === 'string' ? B.formUrl.trim() : '';
     const formUrlOk = /^https?:\/\/\S+$/.test(formUrl) && !isTodo(formUrl);
 
+    // "…or email us at {email}" only once a support email is filled in
+    const errorText = () => (R.emailReady() ? W.errorText : (W.errorTextNoEmail || W.errorText));
     const showError = (text, field) => {
       msg.replaceChildren(rich(text || ''));
       [email, consent].forEach((el) => el.removeAttribute('aria-invalid'));
@@ -612,10 +614,10 @@
         if (res.ok && json && json.success) { succeed(); return; }
         console.warn('[Ravens] Brevo did not accept the sign-up:', res.status, json);
         const detail = json && ((json.errors && Object.values(json.errors).find(hasValue)) || json.message);
-        showError(hasValue(detail) ? String(detail) : W.errorText);
+        showError(hasValue(detail) ? String(detail) : errorText());
       } catch (err) {
         console.warn('[Ravens] Could not reach Brevo:', err);
-        showError(W.errorText);
+        showError(errorText());
       } finally {
         submit.disabled = false;
         submit.removeAttribute('aria-busy');

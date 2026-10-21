@@ -83,6 +83,7 @@ window.RAVENS_CONFIG = {
     invalidEmail: "Please enter a valid email address.",
     consentRequired: "Please tick the box so we're allowed to email you.",
     errorText: "Something went wrong. Please try again, or email us at {email}.",
+    errorTextNoEmail: "Something went wrong. Please try again in a moment.",   // used while company.email is not filled in
     notReady: "The wishlist isn't connected yet. Add your Brevo form URL in config.js (wishlist.brevo.formUrl).",
 
     // Mobile sticky bar
@@ -131,7 +132,7 @@ window.RAVENS_CONFIG = {
      WEBSITE & SEO
      ------------------------------------------------------------------------ */
   site: {
-    url: "https://TODO_DOMAIN",              // your live address, e.g. "https://ravensaccessories.com" (no trailing slash)
+    url: "https://ravensaccessories.com",    // your live address (no trailing slash)
     language: "en",
     locale: "en-IE",                         // number & date format. "en-IE" shows €29.95
     title: "{productName} | Ravens Accessories",   // browser tab + Google title (max. ~60 characters)

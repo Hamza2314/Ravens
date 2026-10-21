@@ -413,33 +413,34 @@ If you don't have Node.js, edit the block between `<!-- SEO:START` and `<!-- SEO
 
 ## 11. Full TODO list
 
-### In `config.js` (17 placeholders)
+### In `config.js` (16 placeholders)
 
-The product is filled in (**Snowbloom Earrings**). What's left:
+The product and the domain (`https://ravensaccessories.com`) are filled in. What's left:
 
-**Wishlist mode**
-
-| Placeholder | What to fill in |
-|---|---|
-| `TODO_BREVO_FORM_URL` | the form URL from Brevo's embed code (section 3) |
-
-**Your details (before the site goes live and collects emails, see the note below)**
+**Needed before real visitors arrive**
 
 | Placeholder | What to fill in |
 |---|---|
-| `TODO_DOMAIN` | your live domain in `site.url`, e.g. `https://ravensaccessories.com` |
+| `TODO_BREVO_FORM_URL` | the form URL from Brevo's embed code (section 3). **Without it the wishlist form can't save sign-ups**: visitors get "The wishlist isn't connected yet". |
+
+**Not needed yet (your details)**
+
+While these are empty, the home page simply leaves them out (no company name in the footer, no Contact column, no "email us" texts). The legal pages still show them as TODO, because those pages are templates.
+
+| Placeholder | What to fill in |
+|---|---|
+| `TODO_SUPPORT_EMAIL` | support email address (brings back the footer Contact column and the "I have another question" FAQ) |
 | `TODO_COMPANY_LEGAL_NAME` | registered company name (or your own name for a sole proprietorship) |
 | `TODO_LEGAL_FORM` | BV / SRL / sole proprietorship… |
 | `TODO_STREET_AND_NUMBER`, `TODO_POSTAL_CODE`, `TODO_CITY` | registered address |
 | `TODO_KBO_BCE_NUMBER` | enterprise number, `0123.456.789` |
 | `TODO_VAT_NUMBER` | `BE0123.456.789`, or the small-enterprise exemption text (see the comment in config.js) |
 | `TODO_RPR_RPM` | register of legal entities + court (companies only; `""` for a sole proprietor) |
-| `TODO_SUPPORT_EMAIL` | support email address |
 | `TODO_EMAIL_PROVIDER` | your mailbox provider, e.g. Google Workspace (privacy policy) |
 | `TODO_HOSTING_PROVIDER` | where the site is hosted, e.g. Netlify / Cloudflare (privacy policy) |
 | `TODO_RETENTION_PERIOD` | how long you keep order data (ask your accountant) |
 
-> The wishlist form collects email addresses, so the privacy policy must say **who** collects them and how to reach you (GDPR art. 13), and a Belgian business website needs its identity in the legal notice. Fill these in before the site goes live, even in wishlist mode.
+> Once the form collects real email addresses, EU privacy law (GDPR art. 13) requires the privacy policy to say **who** collects them and how to reach you, and a Belgian business website needs its identity in the legal notice.
 
 **Hidden until filled** (in the comment next to the setting, so nothing shows on the page)
 
