@@ -173,13 +173,16 @@
     // counter doesn't flicker and a quick second click always counts from the right photo.
     let heading = null;
     let settle = 0;
-    const indexNow = () => Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+    // Exact photo width, fractions included. clientWidth is rounded to whole pixels, and that
+    // rounding added up with every photo, so later photos showed a thin line of the next one.
+    const slideW = () => Math.max(1, track.getBoundingClientRect().width);
+    const indexNow = () => Math.round(track.scrollLeft / slideW());
     const from = () => (heading != null ? heading : current);
 
     function goTo(i) {
       const target = Math.max(0, Math.min(n - 1, i));
       heading = target;
-      track.scrollTo({ left: target * track.clientWidth, behavior: behavior() });
+      track.scrollTo({ left: target * slideW(), behavior: behavior() });
       setActive(target);
     }
 
@@ -191,7 +194,7 @@
       clearTimeout(settle);
       settle = setTimeout(() => {
         // Only "land" once the slide has really arrived (the browser can pause briefly mid-slide)
-        if (heading != null && Math.abs(track.scrollLeft - heading * track.clientWidth) > 2) return;
+        if (heading != null && Math.abs(track.scrollLeft - heading * slideW()) > 2) return;
         heading = null;
         setActive(indexNow());
       }, 160);
@@ -205,7 +208,7 @@
     prev.addEventListener('click', () => goTo(from() - 1));
     next.addEventListener('click', () => goTo(from() + 1));
     if ('ResizeObserver' in window) {
-      new ResizeObserver(() => { track.scrollLeft = current * track.clientWidth; }).observe(track);
+      new ResizeObserver(() => { track.scrollLeft = current * slideW(); }).observe(track);
     }
 
     setActive(0);
@@ -554,7 +557,7 @@
     setText('#wishlist-email-label', W.emailLabel || 'Email address');
     email.placeholder = W.emailPlaceholder || '';
     $('#wishlist-consent-text').replaceChildren(rich(W.consentText || ''));
-    label.textContent = W.button || 'Add to wishlist';
+    label.textContent = W.button || 'Join the waitlist';
 
     // Optional "which one do you like?", only when Brevo has an attribute to store it in
     const variantSet = $('#wishlist-variants');
@@ -633,7 +636,7 @@
       } finally {
         submit.disabled = false;
         submit.removeAttribute('aria-busy');
-        label.textContent = W.button || 'Add to wishlist';
+        label.textContent = W.button || 'Join the waitlist';
       }
     });
   }
@@ -652,7 +655,7 @@
       setText('#sticky-price', tpl(W.stickyText || ''));
       $('#sticky-regular').hidden = true;
       const btn = $('#sticky-buy-button');
-      $('.btn__label', btn).textContent = W.stickyButton || 'Join the wishlist';
+      $('.btn__label', btn).textContent = W.stickyButton || 'Join the waitlist';
       btn.setAttribute('href', '#wishlist');
       btn.addEventListener('click', (e) => {
         e.preventDefault();

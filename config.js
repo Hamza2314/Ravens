@@ -19,7 +19,7 @@ window.RAVENS_CONFIG = {
      SITE MODE: the main switch
      ========================================================================
        "wishlist" → "coming soon" page: product photos + story + an email
-                    sign-up form ("Add to wishlist"). No prices, no checkout.
+                    sign-up form ("Join the waitlist"). No prices, no checkout.
        "shop"     → the full store: prices, sale countdown, options,
                     Stripe "Buy now", reviews.
      Nothing is deleted when you switch: all shop settings further down stay
@@ -29,6 +29,7 @@ window.RAVENS_CONFIG = {
 
   /* ------------------------------------------------------------------------
      WISHLIST MODE (only used when mode is "wishlist")
+     "wishlist" is only the internal name; visitors see the word "waitlist".
      ------------------------------------------------------------------------ */
   wishlist: {
     // Launch countdown in the top bar. ONE fixed moment, the same for everyone,
@@ -38,10 +39,10 @@ window.RAVENS_CONFIG = {
     launchAt: "2026-11-10T20:00:00+01:00",   // 10 November 2026, 20:00 Belgian time (winter time = +01:00)
     showBar: true,                           // false = no top bar at all
     barTitle: "LAUNCHING IN ⏳",
-    barSubtitle: "JOIN THE WISHLIST · GET {wishlistDiscount} OFF AT LAUNCH",
-    barFallback: "COMING SOON ✦ JOIN THE WISHLIST FOR {wishlistDiscount} OFF",   // shown when there is no date or the date has passed
+    barSubtitle: "JOIN THE WAITLIST · GET {wishlistDiscount} OFF AT LAUNCH",
+    barFallback: "COMING SOON ✦ JOIN THE WAITLIST FOR {wishlistDiscount} OFF",   // shown when there is no date or the date has passed
 
-    // THE WISHLIST OFFER: everyone on the wishlist gets this discount at launch.
+    // THE WAITLIST OFFER: everyone on the waitlist gets this discount at launch.
     // It is delivered as a discount code by email on launch day (a Stripe
     // promotion code, see README.md → "Launch day"). Only promise what you will
     // really give to everyone on the list.
@@ -53,7 +54,7 @@ window.RAVENS_CONFIG = {
     // Scrolling bar. beforeLaunch: true → hidden once the launch date has passed.
     // {timeLeft} → "30 DAYS", "1 DAY", "5 HOURS"… until launchAt
     announcements: [
-      { text: "WISHLIST MEMBERS GET {wishlistDiscount} OFF AT LAUNCH ✦" },
+      { text: "WAITLIST MEMBERS GET {wishlistDiscount} OFF AT LAUNCH ✦" },
       { text: "LAUNCHING IN {timeLeft} ✦", beforeLaunch: true },
       { text: "FREE WORLDWIDE SHIPPING AT LAUNCH 🌍" }
     ],
@@ -61,34 +62,34 @@ window.RAVENS_CONFIG = {
     // Google / link previews while in wishlist mode
     seo: {
       title: "{productName} | Coming soon | Ravens Accessories",
-      description: "Join the wishlist for {productName} by Ravens Accessories and get {wishlistDiscount} off at launch."
+      description: "Join the waitlist for {productName} by Ravens Accessories and get {wishlistDiscount} off at launch."
     },
 
     // Product block
     badge: "Coming soon",
     launchLine: "Launching {launchDate}",    // {launchDate} = the date above, e.g. "20 November 2026". "" hides it
     formBadge: "{wishlistDiscount} off at launch",   // highlighted label above the form. "" hides it
-    formTitle: "Join the wishlist",
-    formText: "Wishlist members get {wishlistDiscount} off at launch. On launch day we email you a personal discount code, before anyone else hears about it.",
+    formTitle: "Join the waitlist",
+    formText: "Waitlist members get {wishlistDiscount} off at launch. On launch day we email you a personal discount code, before anyone else hears about it.",
     emailLabel: "Email address",
     emailPlaceholder: "you@example.com",
     variantQuestion: "Which one do you like most? (optional)",   // only shown when brevo.fields.variant is set
     consentText: "Email me when {productName} launches, including my {wishlistDiscount} discount code, and send me occasional news from {brand}. I can unsubscribe at any time. [Privacy policy](privacy.html)",
-    button: "Add to wishlist",
-    sending: "Adding…",
+    button: "Join the waitlist",
+    sending: "Joining…",
     // Text after a successful sign-up. With Brevo's double opt-in (recommended) people must click a
-    // confirmation link first, so keep this text. Without double opt-in, change it to e.g. "You're on the wishlist ✦".
+    // confirmation link first, so keep this text. Without double opt-in, change it to e.g. "You're on the waitlist ✦".
     successTitle: "Almost there ✦",
     successText: "We've sent a confirmation link to your inbox. Click it to secure your spot and your {wishlistDiscount} launch discount.",
     invalidEmail: "Please enter a valid email address.",
     consentRequired: "Please tick the box so we're allowed to email you.",
     errorText: "Something went wrong. Please try again, or email us at {email}.",
     errorTextNoEmail: "Something went wrong. Please try again in a moment.",   // used while company.email is not filled in
-    notReady: "The wishlist isn't connected yet. Add your Brevo form URL in config.js (wishlist.brevo.formUrl).",
+    notReady: "The waitlist isn't connected yet. Add your Brevo form URL in config.js (wishlist.brevo.formUrl).",
 
     // Mobile sticky bar
     stickyText: "{wishlistDiscount} off at launch",
-    stickyButton: "Join the wishlist",
+    stickyButton: "Join the waitlist",
 
     // Brevo (brevo.com): where the sign-ups are stored. Setup steps: README.md → "Brevo setup".
     brevo: {
@@ -111,10 +112,10 @@ window.RAVENS_CONFIG = {
 
     // FAQ while in wishlist mode
     faq: [
-      { q: "When does it launch?", a: "We're launching on {launchDate}. Everyone on the wishlist gets an email the moment it's live." },
-      { q: "How do I get {wishlistDiscount} off?", a: ["Join the wishlist and confirm your email address. On launch day you receive a personal {wishlistDiscount} discount code by email. Enter it at checkout.", "{offerTerms}"] },
-      { q: "How much will it cost?", a: "We'll reveal the price at launch. Wishlist members pay {wishlistDiscount} less with their code." },
-      { q: "Does joining cost anything?", a: "No. Joining the wishlist is free and doesn't commit you to buying anything." },
+      { q: "When does it launch?", a: "We're launching on {launchDate}. Everyone on the waitlist gets an email the moment it's live." },
+      { q: "How do I get {wishlistDiscount} off?", a: ["Join the waitlist and confirm your email address. On launch day you receive a personal {wishlistDiscount} discount code by email. Enter it at checkout.", "{offerTerms}"] },
+      { q: "How much will it cost?", a: "We'll reveal the price at launch. Waitlist members pay {wishlistDiscount} less with their code." },
+      { q: "Does joining cost anything?", a: "No. Joining the waitlist is free and doesn't commit you to buying anything." },
       { q: "What will you email me?", a: "An email when {productName} launches, with your discount code, and occasional news from {brand}. No spam, and every email has a one-click unsubscribe link." },
       { q: "Why do I need to confirm my email?", a: "To make sure it's really you, we send a short confirmation email. Your sign-up and your discount are confirmed once you click the link in it." },
       { q: "What do you do with my email address?", a: "We only use it for the emails described above. It's stored with our email service Brevo. Details in our [privacy policy](privacy.html)." },

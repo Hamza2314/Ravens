@@ -562,7 +562,7 @@ h1, h2, h3 {
   list-style: none;
   color: #fff;
   text-align: center;
-  opacity: 0.8;
+  opacity: 0.3; /* 1 = fully visible, 0 = invisible */
   pointer-events: none;
 }
 .photo-highlights__item { display: grid; flex: 0 1 17cqw; justify-items: center; gap: 1cqw; }

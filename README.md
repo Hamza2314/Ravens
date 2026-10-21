@@ -1,4 +1,4 @@
-# Ravens Accessories: wishlist page + one-product shop
+# Ravens Accessories: waitlist page + one-product shop
 
 A fast, static website for Ravens Accessories. Plain HTML + CSS + JavaScript: no framework, no build step, no backend, no cookies, no tracking.
 
@@ -6,8 +6,10 @@ The site has **two modes**, switched with one line in `config.js`:
 
 | Mode | What visitors see |
 |---|---|
-| **`"wishlist"`** (current) | "Coming soon" page: product photos, story, launch countdown and a **"Join the wishlist"** email form. Everyone on the wishlist gets **50% off at launch**. No prices, no checkout. |
+| **`"wishlist"`** (current) | "Coming soon" page: product photos, story, launch countdown and a **"Join the waitlist"** email form. Everyone on the waitlist gets **50% off at launch**. No prices, no checkout. |
 | **`"shop"`** | The full store: prices, sale countdown, options, Stripe "Buy now", reviews. All of it is still in the code, just not shown in wishlist mode. |
+
+Visitors see the word **waitlist** everywhere; `"wishlist"` is only the mode's internal name in `config.js`.
 
 **You only ever edit two things:**
 
@@ -46,7 +48,7 @@ At the top of `config.js`:
 mode: "wishlist",   // or "shop"
 ```
 
-Nothing is deleted when you switch. In wishlist mode the shop parts (price, options, Buy now, sale countdown, reviews, Google price data) are simply not shown, and in shop mode the wishlist form is not shown.
+Nothing is deleted when you switch. In wishlist mode the shop parts (price, options, Buy now, sale countdown, reviews, Google price data) are simply not shown, and in shop mode the waitlist form is not shown.
 
 > `config.js` is a public file: anyone can open it through the page source. So don't paste your Stripe links into it until you are ready to sell.
 
@@ -65,10 +67,10 @@ launchAt: "2026-11-10T20:00:00+01:00",
 - One fixed moment, the same for every visitor, never restarts on reload.
 - Belgium: `+01:00` in winter time, `+02:00` in summer time (last Sunday of March → last Sunday of October).
 - Set to **10 November 2026, 20:00** (Belgian time).
-- When the moment passes, the countdown is replaced by the line "COMING SOON ✦ JOIN THE WISHLIST FOR 50% OFF" (`barFallback`) and the "LAUNCHING IN …" item leaves the scrolling bar. The site does **not** switch to shop mode by itself; you do that on launch day (section 4).
+- When the moment passes, the countdown is replaced by the line "COMING SOON ✦ JOIN THE WAITLIST FOR 50% OFF" (`barFallback`) and the "LAUNCHING IN …" item leaves the scrolling bar. The site does **not** switch to shop mode by itself; you do that on launch day (section 4).
 - No date yet? Set `launchAt: ""`. The bar then just shows the "coming soon" line. Also rewrite the first FAQ answer, which mentions the date.
 
-### The 50% wishlist offer
+### The 50% waitlist offer
 
 ```js
 offer: {
@@ -83,7 +85,7 @@ offer: {
 
 ### The sign-up form
 
-- Email field, an unticked consent checkbox (required), and the **Add to wishlist** button.
+- Email field, an unticked consent checkbox (required), and the **Join the waitlist** button.
 - After a successful sign-up the form is replaced by "Almost there ✦ We've sent a confirmation link to your inbox…". That text assumes Brevo's **double opt-in** (recommended). If you don't use double opt-in, change `successTitle` / `successText`.
 - Errors are shown under the button: invalid email, consent missing, Brevo rejected the sign-up, or Brevo unreachable ("…email us at {email}").
 - A hidden spam trap catches most bots; their submissions are never sent to Brevo.
@@ -110,7 +112,7 @@ Settings: `banner: { … }` in `config.js`.
 | Scrolling bar | `wishlist.announcements` |
 | Trust row | `wishlist.trust` |
 | FAQ | `wishlist.faq` |
-| Mobile sticky bar | "50% off at launch" + "Join the wishlist" (scrolls to the form) |
+| Mobile sticky bar | "50% off at launch" + "Join the waitlist" (scrolls to the form) |
 | Footer note | `wishlist.footerNote` instead of the Stripe note |
 | Page title / Google / link previews | `wishlist.seo` |
 | Reviews, price, Buy now, Google product data | hidden |
@@ -123,13 +125,13 @@ Settings: `banner: { … }` in `config.js`.
 Brevo (brevo.com, an EU company) stores the sign-ups and sends the confirmation email and, later, your launch email. The free plan is enough to start. Menu names in Brevo can differ slightly from the steps below.
 
 1. Create a free account at <https://www.brevo.com>.
-2. **Contacts → Lists → Create a list**, e.g. "Wishlist".
+2. **Contacts → Lists → Create a list**, e.g. "Waitlist".
 3. *(Optional, for the "which one do you like" question)* **Contacts → Settings → Contact attributes → Create**: type **Text**, name e.g. `FAVOURITE`.
 4. **Contacts → Forms → Create a subscription form**:
    - Keep the **Email** field.
    - Add the **Opt-in** field (the GDPR consent checkbox).
    - If you did step 3, add the `FAVOURITE` attribute as a field too.
-   - Save to the list "Wishlist".
+   - Save to the list "Waitlist".
    - Turn on **Double opt-in** (confirmation email) and set the page people see after confirming to your website.
    - **Don't enable reCAPTCHA**: it loads Google scripts, which the site's privacy setup blocks.
 5. **Share → Embed** and copy the HTML. Look for `action="https://….sibforms.com/serve/…"` and paste that URL into config.js:
@@ -143,9 +145,9 @@ brevo: {
 ```
 
    Check that the field names in the embed code (`name="EMAIL"`, `name="OPT_IN"`) match `fields`.
-6. Deploy, then sign up on the live site with your own email: you should see "Almost there", receive the confirmation email, and after clicking it find yourself in the "Wishlist" list.
+6. Deploy, then sign up on the live site with your own email: you should see "Almost there", receive the confirmation email, and after clicking it find yourself in the "Waitlist" list.
 
-Until `formUrl` is filled in, the form shows "The wishlist isn't connected yet…" instead of failing silently.
+Until `formUrl` is filled in, the form shows "The waitlist isn't connected yet…" instead of failing silently.
 
 ---
 
@@ -161,9 +163,9 @@ Until `formUrl` is filled in, the form shows "The wishlist isn't connected yet�
    - Set `sale.enabled: false` (recommended at launch: see the note below).
    - Change `mode: "wishlist"` to `mode: "shop"`.
    - Run `node tools/sync-head.mjs` (updates the link-preview texts) and deploy.
-4. **Brevo → Campaigns → Create an email campaign** to the "Wishlist" list: the launch announcement, the code, how long it is valid, and the link to the shop.
+4. **Brevo → Campaigns → Create an email campaign** to the "Waitlist" list: the launch announcement, the code, how long it is valid, and the link to the shop.
 
-> **Why `sale.enabled: false` at launch?** The shop's built-in sale shows a crossed-out "was" price. EU rules only allow that if you actually charged that price during the 30 days before the reduction, which isn't possible on day one for a new product. Giving the 50% through the wishlist code avoids that problem and keeps the discount a real perk for the people who signed up. Have this checked by your lawyer.
+> **Why `sale.enabled: false` at launch?** The shop's built-in sale shows a crossed-out "was" price. EU rules only allow that if you actually charged that price during the 30 days before the reduction, which isn't possible on day one for a new product. Giving the 50% through the waitlist code avoids that problem and keeps the discount a real perk for the people who signed up. Have this checked by your lawyer.
 
 ---
 
@@ -329,7 +331,7 @@ Put your photos in `/images`, then update the file names in `config.js` (for exa
    - **After payment → Don't show confirmation page → Redirect customers to your website:**
      `https://YOURDOMAIN/success.html?session_id={CHECKOUT_SESSION_ID}`
    - Create the link and copy it (`https://buy.stripe.com/...`) into `stripeLinkSale`.
-4. Repeat with the **€59.90** price and paste that link into `stripeLinkRegular`. Enable **Allow promotion codes** on it for the wishlist code (section 4).
+4. Repeat with the **€59.90** price and paste that link into `stripeLinkRegular`. Enable **Allow promotion codes** on it for the waitlist code (section 4).
 5. Repeat steps 2–4 for each variant.
 6. **Settings → Emails**: turn on *Successful payments* so customers get a receipt (the thank-you page promises one).
 7. **Settings → Payment methods**: enable **Bancontact** (very popular in Belgium), iDEAL (Netherlands), Apple Pay and Google Pay.
@@ -363,7 +365,7 @@ Upload **this whole folder**. There is no build command and no output directory 
 1. Install the CLI (`npm i -g vercel`), then run `vercel` in this folder, or import a Git repository on vercel.com.
 2. Framework preset: **Other**; no build command; output directory: `.` (root).
 
-`404.html` is used automatically by all three hosts. Security headers are included (`_headers` for Netlify/Cloudflare, `vercel.json` for Vercel); they allow the wishlist form to reach Brevo and block everything else from outside.
+`404.html` is used automatically by all three hosts. Security headers are included (`_headers` for Netlify/Cloudflare, `vercel.json` for Vercel); they allow the waitlist form to reach Brevo and block everything else from outside.
 
 ### After the first deploy: run the sync tool (recommended)
 
@@ -387,7 +389,7 @@ If you don't have Node.js, edit the block between `<!-- SEO:START` and `<!-- SEO
 - [ ] `wishlist.offer.terms` filled in (`TODO_OFFER_VALIDITY`) and matching what you will set up in Stripe
 - [ ] Brevo form connected (`wishlist.brevo.formUrl`), double opt-in on, a test sign-up with your own email works end to end
 - [ ] Every `TODO_` in `config.js` that is shown on the page is filled in (product name, description, photos and alt texts, details, company details, support email)
-- [ ] Privacy policy reviewed (it now includes a wishlist section) and `site.url` set, then `node tools/sync-head.mjs` run and redeployed
+- [ ] Privacy policy reviewed (it now includes a waitlist section) and `site.url` set, then `node tools/sync-head.mjs` run and redeployed
 - [ ] Checked on a real phone
 
 ### Shop mode (launch day)
@@ -402,7 +404,7 @@ If you don't have Node.js, edit the block between `<!-- SEO:START` and `<!-- SEO
 
 ### Points to raise with your accountant or lawyer
 
-- **The 50% wishlist offer and price-reduction rules:** how the launch discount is announced and applied (Belgian CEL art. VI.18 and following).
+- **The 50% waitlist offer and price-reduction rules:** how the launch discount is announced and applied (Belgian CEL art. VI.18 and following).
 - **Marketing emails:** consent (the form's checkbox + double opt-in) and the unsubscribe link in every email.
 - **VAT on EU sales:** above €10,000/year of cross-border B2C sales in the EU, you charge the customer's country's VAT (via the OSS one-stop shop).
 - **UK:** for parcels ≤ £135, the *seller* must charge UK VAT and register for it. The default customs note ("recipient pays") doesn't fit UK orders unless you handle this. Norway (VOEC), Switzerland and Australia have similar rules.
@@ -422,7 +424,7 @@ The product and the domain (`https://ravensaccessories.com`) are filled in. What
 
 | Placeholder | What to fill in |
 |---|---|
-| `TODO_BREVO_FORM_URL` | the form URL from Brevo's embed code (section 3). **Without it the wishlist form can't save sign-ups**: visitors get "The wishlist isn't connected yet". |
+| `TODO_BREVO_FORM_URL` | the form URL from Brevo's embed code (section 3). **Without it the waitlist form can't save sign-ups**: visitors get "The waitlist isn't connected yet". |
 
 **Not needed yet (your details)**
 
@@ -492,7 +494,7 @@ Product photos are done (`images/product-1.jpg` … `product-6.jpg`, made from t
 ```
 index.html            product page (wishlist mode or shop mode)
 legal-notice.html     legal notice (company details)
-privacy.html          privacy policy (GDPR, incl. wishlist and Brevo)
+privacy.html          privacy policy (GDPR, incl. waitlist and Brevo)
 terms.html            terms & conditions
 returns.html          returns + 14-day right of withdrawal + model withdrawal form
 shipping.html         shipping & customs
@@ -501,7 +503,7 @@ success.html          thank-you page after Stripe payment (noindex)
 config.js             ← ALL your content, incl. the mode switch
 css/styles.css        design (colours are variables at the top: near-black + snowy white)
 js/site.js            shared logic: mode, countdowns, marquee, bindings (no need to edit)
-js/product.js         product page logic: gallery, wishlist form, shop (no need to edit)
+js/product.js         product page logic: gallery, waitlist form, shop (no need to edit)
 js/snow-banner.js     snow banner: falling snow + sparkle (no need to edit)
 images/               logo, icons, placeholders, your photos
 fonts/                Inter + Cormorant Garamond, self-hosted (no Google requests)
@@ -510,7 +512,7 @@ _headers, vercel.json security headers for Netlify/Cloudflare and Vercel
 robots.txt, sitemap.xml, site.webmanifest, favicon.*, apple-touch-icon.png
 ```
 
-**Privacy by design:** no cookies, no localStorage, no analytics, fonts self-hosted, so no cookie banner is needed. The only external services are Brevo (only when someone submits the wishlist form) and Stripe (only after a visitor clicks "Buy now" in shop mode).
+**Privacy by design:** no cookies, no localStorage, no analytics, fonts self-hosted, so no cookie banner is needed. The only external services are Brevo (only when someone submits the waitlist form) and Stripe (only after a visitor clicks "Buy now" in shop mode).
 
 ---
 
@@ -519,7 +521,7 @@ robots.txt, sitemap.xml, site.webmanifest, favicon.*, apple-touch-icon.png
 | Problem | Fix |
 |---|---|
 | Red box "config.js could not be loaded" | Syntax error in `config.js`. Press F12 → Console for the line number. Usually a missing comma between entries or a missing quote. |
-| "The wishlist isn't connected yet" | `wishlist.brevo.formUrl` is empty or still `TODO_BREVO_FORM_URL` (section 3). |
+| "The waitlist isn't connected yet" | `wishlist.brevo.formUrl` is empty or still `TODO_BREVO_FORM_URL` (section 3). |
 | Sign-up shows "Something went wrong" | Wrong form URL, or Brevo is unreachable. Press F12 → Console: the site logs what Brevo answered. Check the URL against Brevo's embed code. |
 | Brevo says a field is invalid | The field names in `brevo.fields` don't match your Brevo form. Compare them with the `name="…"` values in the embed code. |
 | No launch countdown | `launchAt` is empty, in the past, or not a valid date. The console says which. |
