@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Legal notice | Ravens Accessories</title>
+  <meta name="description" content="Company details and legal information for Ravens Accessories.">
+  <meta name="theme-color" content="#0b0b0f">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="config.js" defer></script>
+  <script src="js/site.js" defer></script>
+</head>
+<body data-page="legal-notice" data-title="Legal notice">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img class="brand__logo" src="images/logo-light.svg" alt="" width="40" height="40" data-logo>
+        <span class="brand__name" data-cfg="brand.name">Ravens Accessories</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="container page__inner">
+      <a class="back-link" href="./">← <span data-label="backToShop">Back to the shop</span></a>
+      <h1>Legal notice</h1>
+      <p class="page__meta">Last updated: <span data-var="lastUpdated">TODO_LEGAL_LAST_UPDATED</span></p>
+      <p class="template-note" role="note">TEMPLATE: must be reviewed before going live
+        <small>This text is a starting point, not legal advice. Have it checked by a lawyer or accountant, fill in every highlighted value in config.js, then delete this yellow box.</small></p>
+
+      <p>This website and online shop are operated by:</p>
+      <div class="info-card">
+        <dl>
+          <div><dt>Company name</dt><dd data-var="companyName">TODO_COMPANY_LEGAL_NAME</dd></div>
+          <div><dt>Legal form</dt><dd data-var="legalForm">TODO_LEGAL_FORM</dd></div>
+          <div><dt>Registered office</dt><dd><address data-var="address">TODO_ADDRESS</address></dd></div>
+          <div><dt>Enterprise number (KBO/BCE)</dt><dd data-var="enterpriseNumber">TODO_KBO_BCE_NUMBER</dd></div>
+          <div><dt>VAT number</dt><dd data-var="vatNumber">TODO_VAT_NUMBER</dd></div>
+          <div data-if="registerCourt"><dt>Register of legal entities (RPR/RPM)</dt><dd data-var="registerCourt"></dd></div>
+          <div><dt>Email</dt><dd><a data-var="email" data-mailto href="#">TODO_SUPPORT_EMAIL</a></dd></div>
+          <div data-if="phone"><dt>Phone</dt><dd data-var="phone"></dd></div>
+          <div><dt>Website</dt><dd data-var="website">https://TODO_DOMAIN</dd></div>
+        </dl>
+      </div>
+
+      <h2>Trade name</h2>
+      <p>“<span data-var="brand">Ravens Accessories</span>” is a trade name used by <span data-var="companyName">TODO_COMPANY_LEGAL_NAME</span>.</p>
+
+      <h2>Hosting</h2>
+      <p>This website is hosted by <span data-var="hostingProvider">TODO_HOSTING_PROVIDER</span>.</p>
+
+      <h2>Payments</h2>
+      <p>Online payments are processed by Stripe Payments Europe, Limited, 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, D02 H210, Ireland. We never receive or store your full card details.</p>
+
+      <h2>Complaints and consumer disputes</h2>
+      <p>If you have a complaint, please contact us first at <a data-var="email" data-mailto href="#">TODO_SUPPORT_EMAIL</a>. We will do our best to find a solution with you.</p>
+      <p>If we cannot resolve it together, you can turn to the Belgian Consumer Mediation Service (Consumentenombudsdienst / Service de Médiation pour le Consommateur): <a href="https://www.mediationconsommateur.be" rel="noopener">www.mediationconsommateur.be</a>. Consumers living in another EU country can also contact the European Consumer Centre in their country.</p>
+
+      <h2>Intellectual property</h2>
+      <p>All content on this website (texts, photographs, the logo and the design) belongs to <span data-var="companyName">TODO_COMPANY_LEGAL_NAME</span> unless stated otherwise. It may not be copied or reused without our prior written permission.</p>
+
+      <h2>Liability for content</h2>
+      <p>We take great care to keep the information on this website accurate and up to date. Errors can nevertheless occur; if you notice one, please let us know. Links to third-party websites are provided for convenience only; we are not responsible for their content.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer site-footer--plain">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="./">
+            <img class="brand__logo" src="images/logo-light.svg" alt="" width="52" height="52" data-logo>
+            <span class="brand__name" data-cfg="brand.name">Ravens Accessories</span>
+          </a>
+          <p class="footer__tagline" data-cfg="brand.tagline"></p>
+        </div>
+        <nav aria-labelledby="footer-legal">
+          <h2 class="footer__heading" id="footer-legal">Legal</h2>
+          <ul class="footer__links">
+            <li><a href="shipping.html">Shipping</a></li>
+            <li><a href="returns.html">Returns &amp; withdrawal</a></li>
+            <li><a href="terms.html">Terms &amp; conditions</a></li>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="legal-notice.html" aria-current="page">Legal notice</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer__heading">Contact</h2>
+          <div class="footer__contact">
+            <a data-var="email" data-mailto href="#">TODO_SUPPORT_EMAIL</a>
+            <span data-if="phone" data-var="phone"></span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-cfg="footer.note"></p>
+        <p>© <span data-var="year"></span> <span data-cfg="brand.name">Ravens Accessories</span> · <span data-var="companyName"></span></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

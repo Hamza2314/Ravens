@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Shipping | Ravens Accessories</title>
+  <meta name="description" content="Free worldwide shipping: processing times, delivery times per region, tracking and customs information.">
+  <meta name="theme-color" content="#0b0b0f">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="config.js" defer></script>
+  <script src="js/site.js" defer></script>
+</head>
+<body data-page="shipping" data-title="Shipping">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img class="brand__logo" src="images/logo-light.svg" alt="" width="40" height="40" data-logo>
+        <span class="brand__name" data-cfg="brand.name">Ravens Accessories</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="container page__inner">
+      <a class="back-link" href="./">← <span data-label="backToShop">Back to the shop</span></a>
+      <h1>Shipping</h1>
+      <p class="page__meta">Last updated: <span data-var="lastUpdated">TODO_LEGAL_LAST_UPDATED</span></p>
+      <p class="template-note" role="note">TEMPLATE: must be reviewed before going live
+        <small>Make sure the delivery times in config.js match what your carrier really delivers, then delete this yellow box.</small></p>
+
+      <h2>Free shipping worldwide</h2>
+      <p>Shipping is free on every order, to every country we deliver to. There is no minimum order value.</p>
+
+      <h2>Processing time</h2>
+      <p>We ship from <span data-var="shipsFrom">Belgium</span>. Orders are prepared and handed to the carrier within <span data-var="processingTime">1–2 business days</span> after payment (business days are Monday to Friday, excluding Belgian public holidays).</p>
+
+      <h2>Delivery times</h2>
+      <p>After dispatch, delivery usually takes:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Destination</th><th scope="col">Estimated delivery</th></tr></thead>
+          <tbody data-render="delivery-times"></tbody>
+        </table>
+      </div>
+      <p>These are estimates from our carrier (<span data-var="carrier">TODO_CARRIER</span>). Delays can occasionally happen, for example around holidays or because of customs checks. Unless agreed otherwise, we deliver no later than 30 days after your order.</p>
+
+      <h2>Tracking</h2>
+      <p>As soon as your order ships, you receive an email with a tracking link so you can follow your parcel.</p>
+
+      <h2>Customs, duties and taxes (outside the EU)</h2>
+      <p data-var="customsNote">Orders shipped outside the European Union may be subject to import duties, taxes and customs fees charged by the destination country. These are paid by the recipient.</p>
+      <p>Orders within the European Union are never charged customs duties.</p>
+
+      <h2>Address and delivery problems</h2>
+      <ul>
+        <li>Please check your shipping address carefully in the checkout. If you notice a mistake, email us immediately at <a data-var="email" data-mailto href="#">TODO_SUPPORT_EMAIL</a>. We can correct it as long as the parcel has not left.</li>
+        <li>If a parcel is returned to us as undeliverable (for example because of an incorrect address or because it was not collected), we will contact you to arrange a new delivery.</li>
+        <li>Parcel lost or damaged? Contact us. The risk only passes to you once you receive the parcel, so we will make it right.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer site-footer--plain">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="./">
+            <img class="brand__logo" src="images/logo-light.svg" alt="" width="52" height="52" data-logo>
+            <span class="brand__name" data-cfg="brand.name">Ravens Accessories</span>
+          </a>
+          <p class="footer__tagline" data-cfg="brand.tagline"></p>
+        </div>
+        <nav aria-labelledby="footer-legal">
+          <h2 class="footer__heading" id="footer-legal">Legal</h2>
+          <ul class="footer__links">
+            <li><a href="shipping.html" aria-current="page">Shipping</a></li>
+            <li><a href="returns.html">Returns &amp; withdrawal</a></li>
+            <li><a href="terms.html">Terms &amp; conditions</a></li>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="legal-notice.html">Legal notice</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer__heading">Contact</h2>
+          <div class="footer__contact">
+            <a data-var="email" data-mailto href="#">TODO_SUPPORT_EMAIL</a>
+            <span data-if="phone" data-var="phone"></span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-cfg="footer.note"></p>
+        <p>© <span data-var="year"></span> <span data-cfg="brand.name">Ravens Accessories</span> · <span data-var="companyName"></span></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

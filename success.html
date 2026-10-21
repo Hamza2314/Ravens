@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Thank you | Ravens Accessories</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b0b0f">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="config.js" defer></script>
+  <script src="js/site.js" defer></script>
+</head>
+<body data-page="success" data-title="Thank you">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img class="brand__logo" src="images/logo-light.svg" alt="" width="40" height="40" data-logo>
+        <span class="brand__name" data-cfg="brand.name">Ravens Accessories</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main" class="centered-page">
+    <div class="container centered-page__inner">
+      <img class="centered-page__logo" src="images/logo-light.svg" alt="" width="84" height="84" data-logo>
+      <h1 class="section__title" data-cfg="success.title">Thank you for your order</h1>
+      <div class="ornament" aria-hidden="true"><span></span></div>
+      <p data-cfg="success.message">Your payment was successful. Stripe will email you a receipt within a few minutes.</p>
+      <ul class="steps" data-render="success-steps"></ul>
+      <a class="btn btn--buy" href="./" data-cfg="success.button">Back to the shop</a>
+    </div>
+  </main>
+
+  <footer class="site-footer site-footer--plain">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="./">
+            <img class="brand__logo" src="images/logo-light.svg" alt="" width="52" height="52" data-logo>
+            <span class="brand__name" data-cfg="brand.name">Ravens Accessories</span>
+          </a>
+          <p class="footer__tagline" data-cfg="brand.tagline"></p>
+        </div>
+        <nav aria-labelledby="footer-legal">
+          <h2 class="footer__heading" id="footer-legal">Legal</h2>
+          <ul class="footer__links">
+            <li><a href="shipping.html">Shipping</a></li>
+            <li><a href="returns.html">Returns &amp; withdrawal</a></li>
+            <li><a href="terms.html">Terms &amp; conditions</a></li>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="legal-notice.html">Legal notice</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer__heading">Contact</h2>
+          <div class="footer__contact">
+            <a data-var="email" data-mailto href="#">TODO_SUPPORT_EMAIL</a>
+            <span data-if="phone" data-var="phone"></span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-cfg="footer.note"></p>
+        <p>© <span data-var="year"></span> <span data-cfg="brand.name">Ravens Accessories</span> · <span data-var="companyName"></span></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

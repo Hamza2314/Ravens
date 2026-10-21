@@ -1,0 +1,12 @@
+# Source files the website doesn't use: they stay on your computer but are not
+# uploaded (this repository is public, and hosts publish everything they receive).
+ProductPhotos/
+ProductReviewPhotos/
+RavensIcons/
+Logo.png
+Logo2.png
+
+# System files
+Thumbs.db
+desktop.ini
+.DS_Store

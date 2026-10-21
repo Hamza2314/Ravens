@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- SEO:START: filled from config.js in the browser. Run `node tools/sync-head.mjs` to also write
+       these values here (needed for link previews on WhatsApp/Instagram/Facebook, which don't run JS). -->
+  <title>Snowbloom Earrings | Coming soon | Ravens Accessories</title>
+  <meta name="description" content="Join the wishlist for Snowbloom Earrings by Ravens Accessories and get 50% off at launch.">
+  <link rel="canonical" href="https://TODO_DOMAIN/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ravens Accessories">
+  <meta property="og:title" content="Snowbloom Earrings | Coming soon | Ravens Accessories">
+  <meta property="og:description" content="Join the wishlist for Snowbloom Earrings by Ravens Accessories and get 50% off at launch.">
+  <meta property="og:url" content="https://TODO_DOMAIN/">
+  <meta property="og:image" content="https://TODO_DOMAIN/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ravens Accessories logo: a silver feather with a gemstone tip on a dark background">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Snowbloom Earrings | Coming soon | Ravens Accessories">
+  <meta name="twitter:description" content="Join the wishlist for Snowbloom Earrings by Ravens Accessories and get 50% off at launch.">
+  <meta name="twitter:image" content="https://TODO_DOMAIN/images/og-image.jpg">
+  <meta name="twitter:image:alt" content="Ravens Accessories logo: a silver feather with a gemstone tip on a dark background">
+  <!-- SEO:END -->
+
+  <meta name="theme-color" content="#0b0b0f">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json" id="product-jsonld">{}</script>
+  <script src="config.js" defer></script>
+  <script src="js/site.js" defer></script>
+  <script src="js/product.js" defer></script>
+  <script src="js/snow-banner.js" defer></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <noscript><div class="noscript">This shop needs JavaScript to show products and prices. Please enable JavaScript in your browser.</div></noscript>
+
+  <!-- 1) Sale countdown bar (hidden automatically when the sale is off or over) -->
+  <div class="sale-bar" id="sale-bar" hidden>
+    <div class="container sale-bar__inner">
+      <div class="sale-bar__text">
+        <p class="sale-bar__title" data-cfg="sale.barTitle">SALE ENDS IN ⏳</p>
+        <p class="sale-bar__subtitle" data-cfg="sale.barSubtitle">FREE SHIPPING WORLDWIDE</p>
+      </div>
+      <div class="countdown" role="timer" aria-label="Time left in the sale">
+        <div class="countdown__unit"><span class="countdown__value" data-unit="days" aria-hidden="true">00</span><span class="countdown__label" data-label="countdown.days" aria-hidden="true">Days</span></div>
+        <span class="countdown__sep" aria-hidden="true">:</span>
+        <div class="countdown__unit"><span class="countdown__value" data-unit="hours" aria-hidden="true">00</span><span class="countdown__label" data-label="countdown.hours" aria-hidden="true">Hours</span></div>
+        <span class="countdown__sep" aria-hidden="true">:</span>
+        <div class="countdown__unit"><span class="countdown__value" data-unit="mins" aria-hidden="true">00</span><span class="countdown__label" data-label="countdown.mins" aria-hidden="true">Mins</span></div>
+        <span class="countdown__sep" aria-hidden="true">:</span>
+        <div class="countdown__unit"><span class="countdown__value" data-unit="secs" aria-hidden="true">00</span><span class="countdown__label" data-label="countdown.secs" aria-hidden="true">Secs</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2) Scrolling announcements -->
+  <div class="marquee" id="marquee" hidden>
+    <ul class="marquee__sr visually-hidden"></ul>
+    <div class="marquee__track" aria-hidden="true"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img class="brand__logo" src="images/logo-light.svg" alt="" width="40" height="40" data-logo>
+        <span class="brand__name" data-cfg="brand.name">Ravens Accessories</span>
+      </a>
+      <nav class="site-nav" aria-label="Page sections">
+        <ul>
+          <li><a href="#story" data-label="nav.story">Story</a></li>
+          <li><a href="#details" data-label="nav.details">Details</a></li>
+          <li data-nav="reviews"><a href="#reviews" data-label="nav.reviews">Reviews</a></li>
+          <li><a href="#faq" data-label="nav.faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Snow banner: photo + falling snow + sparkle that follows scrolling (and the mouse).
+         Texts and photo come from config.js → banner. -->
+    <section class="snow-banner" id="snow-banner" aria-labelledby="snow-banner-title">
+      <div class="snow-banner__wrap container">
+        <div class="snow-banner__frame">
+          <div class="snow-banner__stage">
+            <img class="snow-banner__img" src="images/banner-snowbloom.jpg" alt="The Snowbloom earring lying in fresh, sparkling snow" width="1536" height="688" fetchpriority="high" decoding="async">
+            <div class="snow-banner__shine" aria-hidden="true"><span class="snow-banner__band"></span></div>
+            <div class="snow-banner__glints" aria-hidden="true"></div>
+          </div>
+          <canvas class="snow-banner__snow" aria-hidden="true"></canvas>
+          <div class="snow-banner__text">
+            <p class="snow-banner__title" id="snow-banner-title">Snowbloom</p>
+            <p class="snow-banner__subtitle" id="snow-banner-subtitle">Launching 10 November</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) Product -->
+    <section class="product" id="product" aria-labelledby="product-title">
+      <div class="container product__grid">
+        <div class="gallery" id="gallery">
+          <div class="gallery__viewport">
+            <div class="gallery__track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Product photos"></div>
+            <button type="button" class="gallery__nav gallery__nav--prev" aria-label="Previous photo"></button>
+            <button type="button" class="gallery__nav gallery__nav--next" aria-label="Next photo"></button>
+            <span class="gallery__badge gallery__hint" aria-hidden="true"></span>
+            <span class="gallery__badge gallery__counter" aria-hidden="true"></span>
+          </div>
+          <div class="gallery__thumbs"></div>
+        </div>
+
+        <div class="product__info">
+          <p class="eyebrow" id="product-eyebrow">Ravens Accessories</p>
+          <h1 class="product__title" id="product-title">TODO_PRODUCT_NAME</h1>
+
+          <!-- SHOP MODE: rating + price (shown when config.js → mode: "shop") -->
+          <div data-mode="shop" hidden>
+            <a class="rating-summary" id="rating-summary" href="#reviews" hidden></a>
+
+            <div class="price" id="price">
+              <p>
+                <span class="visually-hidden" id="price-current-label">Price:</span>
+                <span class="price__current" id="price-current"></span>
+              </p>
+              <p class="price__regular" id="price-regular" hidden>
+                <span class="visually-hidden" id="price-regular-label">Regular price:</span>
+                <s id="price-regular-value"></s>
+              </p>
+              <span class="badge" id="price-badge" hidden></span>
+            </div>
+            <p class="price__note" id="price-note"></p>
+            <p class="price__reference" id="price-reference" hidden></p>
+          </div>
+
+          <!-- WISHLIST MODE: "coming soon" line (shown when config.js → mode: "wishlist") -->
+          <p class="soon" data-mode="wishlist" hidden>
+            <span class="badge badge--soon" id="soon-badge">Coming soon</span>
+            <span class="soon__date" id="soon-date"></span>
+          </p>
+
+          <p class="product__short" id="product-short"></p>
+
+          <!-- SHOP MODE: options + Stripe checkout -->
+          <div data-mode="shop" hidden>
+            <fieldset class="variants" id="variants">
+              <legend class="variants__legend"><span id="variant-label">Option</span>: <strong id="variant-name"></strong></legend>
+              <div class="variants__options"></div>
+            </fieldset>
+
+            <a class="btn btn--buy btn--buy-main" id="buy-button" href="#product"><span class="btn__label">Buy now</span></a>
+            <p class="buy-msg" id="buy-msg" role="status"></p>
+            <p class="secure-note" id="secure-note"><span>Secure checkout with Stripe</span></p>
+          </div>
+
+          <!-- WISHLIST MODE: email sign-up (sent to Brevo) -->
+          <div class="wishlist" id="wishlist" data-mode="wishlist" hidden>
+            <form class="wishlist__form" id="wishlist-form" novalidate>
+              <p class="wishlist__offer" id="wishlist-offer" hidden><span class="badge" id="wishlist-offer-badge"></span></p>
+              <h2 class="wishlist__title" id="wishlist-title">Join the wishlist</h2>
+              <p class="wishlist__text" id="wishlist-text"></p>
+              <div class="field">
+                <label class="field__label" for="wishlist-email" id="wishlist-email-label">Email address</label>
+                <input class="field__input" id="wishlist-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="wishlist-msg">
+              </div>
+              <fieldset class="variants" id="wishlist-variants" hidden>
+                <legend class="variants__legend" id="wishlist-variant-question"></legend>
+                <div class="variants__options"></div>
+              </fieldset>
+              <label class="consent" for="wishlist-consent">
+                <input type="checkbox" id="wishlist-consent" required aria-describedby="wishlist-msg">
+                <span id="wishlist-consent-text"></span>
+              </label>
+              <!-- spam trap for bots: real visitors never see or fill this -->
+              <div class="visually-hidden" aria-hidden="true">
+                <label for="wishlist-hp">Leave this empty</label>
+                <input type="text" id="wishlist-hp" tabindex="-1" autocomplete="off">
+              </div>
+              <button type="submit" class="btn btn--buy btn--buy-main" id="wishlist-submit"><span class="btn__label">Add to wishlist</span></button>
+              <p class="form-msg" id="wishlist-msg" role="status" aria-live="polite"></p>
+              <p class="wishlist__terms" id="wishlist-terms" hidden></p>
+            </form>
+            <div class="wishlist__success" id="wishlist-success" tabindex="-1" hidden>
+              <span class="wishlist__success-icon" id="wishlist-success-icon"></span>
+              <h2 class="wishlist__title" id="wishlist-success-title"></h2>
+              <p class="wishlist__text" id="wishlist-success-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Trust row -->
+    <section class="trust" id="trust" aria-labelledby="trust-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="trust-title" data-label="trustTitle">Why shop with us</h2>
+        <ul class="trust__list" id="trust-list"></ul>
+      </div>
+    </section>
+
+    <!-- 5) Story + highlights -->
+    <section class="section" id="story" aria-labelledby="story-title">
+      <div class="container story__grid">
+        <div class="story__text reveal">
+          <p class="eyebrow" id="story-eyebrow"></p>
+          <h2 class="section__title" id="story-title"></h2>
+          <div class="ornament" aria-hidden="true"><span></span></div>
+          <div class="story__body" id="story-body"></div>
+        </div>
+        <ul class="features" id="features"></ul>
+      </div>
+    </section>
+
+    <!-- 6) Lifestyle photos -->
+    <section class="section section--alt" id="lifestyle" aria-labelledby="lifestyle-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="lifestyle-title"></h2>
+          <p class="section__subtitle" id="lifestyle-subtitle"></p>
+          <div class="ornament" aria-hidden="true"><span></span></div>
+        </div>
+        <!-- one row of photos: swipe on phones, scroll or use the arrows on desktop -->
+        <div class="rail reveal" id="lifestyle-rail">
+          <ul class="rail__track" id="lifestyle-grid" tabindex="0" aria-labelledby="lifestyle-title"></ul>
+          <button type="button" class="rail__btn rail__btn--prev" aria-label="Previous photos" hidden></button>
+          <button type="button" class="rail__btn rail__btn--next" aria-label="Next photos" hidden></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7) Details -->
+    <section class="section" id="details" aria-labelledby="details-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="details-title" data-label="detailsTitle">Details</h2>
+          <p class="section__subtitle" data-label="detailsSubtitle"></p>
+          <div class="ornament" aria-hidden="true"><span></span></div>
+        </div>
+        <dl class="details__list reveal" id="details-list"></dl>
+        <details class="safety" id="safety">
+          <summary id="safety-title"><span>Product safety information</span></summary>
+          <dl id="safety-list"></dl>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8) Reviews (hidden while config.reviews is empty, so nothing is ever faked) -->
+    <section class="section section--alt" id="reviews" aria-labelledby="reviews-title" hidden>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="reviews-title" data-label="reviewsTitle">Customer reviews</h2>
+          <div class="reviews__summary">
+            <p class="reviews__avg" id="reviews-avg"></p>
+            <div id="reviews-stars"></div>
+            <p class="reviews__count" id="reviews-count"></p>
+          </div>
+        </div>
+        <ul class="reviews__grid" id="reviews-grid"></ul>
+        <div class="reviews__more">
+          <button type="button" class="btn btn--ghost" id="reviews-more" hidden><span class="btn__label">Show more reviews</span></button>
+        </div>
+        <p class="reviews__note" id="reviews-note"></p>
+      </div>
+    </section>
+
+    <!-- 9) FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="faq-title" data-label="faqTitle">Frequently asked questions</h2>
+          <div class="ornament" aria-hidden="true"><span></span></div>
+        </div>
+        <div class="faq__list" id="faq-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10) Sticky bar (mobile): "Buy now" in shop mode, "Join the wishlist" in wishlist mode -->
+  <div class="sticky-buy" id="sticky-buy" aria-hidden="true">
+    <div class="sticky-buy__info">
+      <span class="sticky-buy__name" id="sticky-name"></span>
+      <span class="sticky-buy__price"><span id="sticky-price"></span><s id="sticky-regular" hidden></s></span>
+    </div>
+    <a class="btn btn--buy" id="sticky-buy-button" href="#product"><span class="btn__label">Buy now</span></a>
+  </div>
+
+  <!-- 11) Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="./">
+            <img class="brand__logo" src="images/logo-light.svg" alt="" width="52" height="52" data-logo>
+            <span class="brand__name" data-cfg="brand.name">Ravens Accessories</span>
+          </a>
+          <p class="footer__tagline" data-cfg="brand.tagline"></p>
+        </div>
+        <nav aria-labelledby="footer-legal">
+          <h2 class="footer__heading" id="footer-legal">Legal</h2>
+          <ul class="footer__links">
+            <li><a href="shipping.html">Shipping</a></li>
+            <li><a href="returns.html">Returns &amp; withdrawal</a></li>
+            <li><a href="terms.html">Terms &amp; conditions</a></li>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="legal-notice.html">Legal notice</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer__heading">Contact</h2>
+          <div class="footer__contact">
+            <a data-var="email" data-mailto href="#">TODO_SUPPORT_EMAIL</a>
+            <span data-if="phone" data-var="phone"></span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-cfg="footer.note"></p>
+        <p>© <span data-var="year"></span> <span data-cfg="brand.name">Ravens Accessories</span> · <span data-var="companyName"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Photo viewer -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <div class="lightbox__stage">
+      <figure class="lightbox__figure">
+        <img class="lightbox__img" alt="">
+        <figcaption class="lightbox__caption" hidden></figcaption>
+      </figure>
+    </div>
+    <p class="lightbox__counter" aria-live="polite"></p>
+    <button type="button" class="lightbox__btn lightbox__close" aria-label="Close">
+      <svg class="icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <button type="button" class="lightbox__btn lightbox__nav lightbox__nav--prev" aria-label="Previous photo">
+      <svg class="icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 5-7 7 7 7"/></svg>
+    </button>
+    <button type="button" class="lightbox__btn lightbox__nav lightbox__nav--next" aria-label="Next photo">
+      <svg class="icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"/></svg>
+    </button>
+  </dialog>
+</body>
+</html>

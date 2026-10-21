@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-label="Placeholder: Lifestyle photo 3">
+<defs><radialGradient id="g" cx=".5" cy=".42" r=".75"><stop offset="0" stop-color="#262b35"/><stop offset=".6" stop-color="#13151b"/><stop offset="1" stop-color="#0b0b0f"/></radialGradient></defs>
+<rect width="1200" height="1500" fill="url(#g)"/>
+<rect x="18.0" y="18.0" width="1164.0" height="1464.0" fill="none" stroke="#e8e6ee" stroke-opacity=".18" stroke-width="2.25" stroke-dasharray="13.5 10.5"/>
+<g transform="translate(600.0 577.5) scale(0.75)" fill="none" stroke="#e8eef6" stroke-width="5" stroke-linejoin="round" opacity=".75"><path d="M-170 -60 L-90 -150 L90 -150 L170 -60 L0 170 Z"/><path d="M-170 -60 H170 M-90 -150 L-40 -60 L0 170 L40 -60 L90 -150 M-40 -60 L0 -150 L40 -60"/></g>
+<g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" fill="#e8e6ee">
+<text x="600.0" y="832.5" font-size="48.0" letter-spacing="6.0">LIFESTYLE PHOTO 3</text>
+<text x="600.0" y="892.5" font-size="26.400000000000002" fill="#dfe6f0" font-family="Arial, Helvetica, sans-serif" letter-spacing="1.5">PLACEHOLDER · REPLACE BEFORE LAUNCH</text>
+<text x="600.0" y="952.5" font-size="24.0" fill-opacity=".8" font-family="Arial, Helvetica, sans-serif">Detail in natural light</text>
+<text x="600.0" y="1001.25" font-size="24.0" fill-opacity=".8" font-family="Arial, Helvetica, sans-serif">Recommended: 1200 × 1500 px · JPG or WebP · under 300 KB</text>
+</g></svg>
