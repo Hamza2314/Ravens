@@ -251,7 +251,7 @@ window.RAVENS_CONFIG = {
     // Optional "zoom": a different file to show when the photo is tapped open (e.g. without room for highlights).
     // Replace the placeholder files in /images and update the file names here.
     images: [
-      { src: "images/product-1.jpg", zoom: "images/product-1-full.jpg", alt: "A pair of flower-shaped stud earrings set with clear sparkling stones, on a black background" },
+      { src: "images/product-1.jpg", alt: "A pair of flower-shaped stud earrings set with clear sparkling stones, on a black background" },
       { src: "images/product-2.jpg", alt: "Woman with long blonde hair wearing the flower stud earring, seen from the side" },
       { src: "images/product-3.jpg", alt: "Woman with dark hair wearing the flower stud earring, seen from the side" },
       { src: "images/product-4.jpg", alt: "The flower stud earrings in an open black jewelry box" },
@@ -264,7 +264,7 @@ window.RAVENS_CONFIG = {
     // stored in the link, not the price shown on this site:
     //   stripeLinkSale    → a Payment Link that charges price.sale    (used while the sale runs)
     //   stripeLinkRegular → a Payment Link that charges price.regular (used after the sale ends)
-    // Highlights shown ON the first product photo (a column on the left, icon + text).
+    // Highlights shown ON the first product photo (a row along the bottom: icon with text under it).
     // Icons: diameter, feather, hallmark, gem, sparkle, globe, gift, shield, lock, truck, return, mail, check.
     // Only state what is true. Leave the list empty [] to show the photo without highlights.
     photoHighlights: [
