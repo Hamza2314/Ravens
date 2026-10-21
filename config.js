@@ -281,11 +281,12 @@ window.RAVENS_CONFIG = {
     // Story section (draft copy: rewrite freely, but only state things that are true)
     story: {
       eyebrow: "The story",
-      title: "A flower that blooms in the dark",
+      title: "Chosen, not churned out",
       paragraphs: [
-        "Ravens have always been keepers of secrets: messengers between night and day, said to bring a little magic to those who notice them. Ravens Accessories was born from that idea: jewelry with a dark heart and a quiet glow.",
-        "Snowbloom is our first piece: a snow-white flower of sparkling cubic zirconia on 925 silver posts. Proof that even in the dark, something can bloom."
-      ]
+        "We didn’t want to sell another piece of jewelry you forget in a drawer. So before Snowbloom, we said no to a lot of others: pieces that looked good in photos but felt cheap in the hand, posts that irritated the ear, stones that went dull.",
+        "Snowbloom made the cut. Cubic zirconia set in a flower that catches every bit of light, on 925 sterling silver posts that are gentle on the ear, and light enough (about 4.3 g for the pair) to forget you’re wearing them."
+      ],
+      closing: "Ravens have always collected what glitters. We just got pickier about it."   // shown as a closing line in the italic serif ("" hides it)
     },
 
     // 3–4 highlights. Icons: gem, feather, shield, sparkle, gift, moon, heart, globe, lock, truck, return, mail

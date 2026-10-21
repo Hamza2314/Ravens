@@ -339,7 +339,9 @@
     if (!hasValue(s.title) && !paragraphs.length && !feats.length) { $('#story').hidden = true; return; }
     setText('#story-eyebrow', s.eyebrow);
     setText('#story-title', s.title);
-    $('#story-body').replaceChildren(...paragraphs.map((p) => h('p', null, rich(p))));
+    const storyNodes = paragraphs.map((p) => h('p', null, rich(p)));
+    if (hasValue(s.closing)) storyNodes.push(h('p', { class: 'story__closing' }, rich(s.closing)));
+    $('#story-body').replaceChildren(...storyNodes);
     $('#features').replaceChildren(...feats.map((f) =>
       h('li', { class: 'feature reveal' },
         h('span', { class: 'feature__icon' }, icon(f.icon, 24)),
