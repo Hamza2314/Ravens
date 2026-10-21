@@ -252,7 +252,9 @@
     'chevron-left': '<path d="m15 5-7 7 7 7"/>',
     'chevron-right': '<path d="m9 5 7 7-7 7"/>',
     'arrow-left': '<path d="M19 12H5M11 6l-6 6 6 6"/>',
-    zoom: '<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2M11 8.5v5M8.5 11h5"/>'
+    zoom: '<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2M11 8.5v5M8.5 11h5"/>',
+    diameter: '<circle cx="12" cy="12" r="9"/><path d="M6.5 12h11M8.7 9.8 6.5 12l2.2 2.2M15.3 9.8l2.2 2.2-2.2 2.2"/>',
+    hallmark: '<circle cx="12" cy="12" r="9.5"/><text x="12" y="14.4" text-anchor="middle" font-size="6.6" font-weight="700" font-family="Inter, system-ui, sans-serif" fill="currentColor" stroke="none" letter-spacing="0.2">925</text>'
   };
   const STAR = '<path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>';
   const SVG_NS = 'http://www.w3.org/2000/svg';

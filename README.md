@@ -228,7 +228,8 @@ announcements: [
 ### Product, variants, photos (both modes)
 
 - `product.name`, `shortDescription`, `sku`, `details` (material, stone, dimensions, weight, care, allergy note) and `safety` (EU GPSR product-safety info: manufacturer, warnings).
-- `product.images`: list of `{ src, alt }`. The first entry is the main image. `alt` describes the photo for blind visitors and Google.
+- `product.images`: list of `{ src, alt }`. The first entry is the main image. `alt` describes the photo for blind visitors and Google. Optional `zoom`: a different file shown when the photo is tapped open (the main photo uses this: the gallery version has the earrings moved right to make room for the highlights, the enlarged view shows the centred original).
+- `product.photoHighlights`: the icon + text column on the first photo ("16 MM WIDE", "ONLY 4.3 G A PAIR", …). Only state what is true; `[]` removes the column.
 - `product.variants`: one entry per option (for example Silver / Black). With only one variant, the selector is hidden. `image: 1` makes the gallery jump to photo 2 when that variant is selected. `soldOut: true` shows the option greyed out. Each variant needs **two Stripe links** (see section 8).
 - `product.story`, `product.features` (3–4 highlights; icons: `gem, feather, shield, sparkle, gift, moon, heart, globe, lock, truck, return, mail, check`) and `product.lifestyle.photos`: photos only (no captions), shown as **one row** that visitors swipe on phones or scroll with arrows on desktop. 4–8 photos look best; tapping one opens it large.
 - Any section whose content is empty is hidden automatically.

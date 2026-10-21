@@ -248,9 +248,10 @@ window.RAVENS_CONFIG = {
     shortDescription: "A snow-white flower of sparkling cubic zirconia on 925 silver posts. Made to catch the light, day or night.",  // 1–2 sentences under the name
 
     // Product photos. First one = main image. Recommended: 1600 × 1600 px, square, JPG/WebP, < 300 KB.
+    // Optional "zoom": a different file to show when the photo is tapped open (e.g. without room for highlights).
     // Replace the placeholder files in /images and update the file names here.
     images: [
-      { src: "images/product-1.jpg", alt: "A pair of flower-shaped stud earrings set with clear sparkling stones, on a black background" },
+      { src: "images/product-1.jpg", zoom: "images/product-1-full.jpg", alt: "A pair of flower-shaped stud earrings set with clear sparkling stones, on a black background" },
       { src: "images/product-2.jpg", alt: "Woman with long blonde hair wearing the flower stud earring, seen from the side" },
       { src: "images/product-3.jpg", alt: "Woman with dark hair wearing the flower stud earring, seen from the side" },
       { src: "images/product-4.jpg", alt: "The flower stud earrings in an open black jewelry box" },
@@ -263,6 +264,16 @@ window.RAVENS_CONFIG = {
     // stored in the link, not the price shown on this site:
     //   stripeLinkSale    → a Payment Link that charges price.sale    (used while the sale runs)
     //   stripeLinkRegular → a Payment Link that charges price.regular (used after the sale ends)
+    // Highlights shown ON the first product photo (a column on the left, icon + text).
+    // Icons: diameter, feather, hallmark, gem, sparkle, globe, gift, shield, lock, truck, return, mail, check.
+    // Only state what is true. Leave the list empty [] to show the photo without highlights.
+    photoHighlights: [
+      { icon: "diameter", text: "16 mm wide" },
+      { icon: "feather",  text: "Only 4.3 g a pair" },
+      { icon: "hallmark", text: "925 silver posts" },
+      { icon: "gem",      text: "Cubic zirconia" }
+    ],
+
     // One option for now (all photos show the clear "silver" stones), so the selector is hidden.
     // To offer more colours later, copy the block, give it its own id/name and photos.
     variantLabel: "Stone colour",
@@ -283,15 +294,15 @@ window.RAVENS_CONFIG = {
       eyebrow: "The story",
       title: "Chosen, not churned out",
       paragraphs: [
-        "We didn’t want to sell another piece of jewelry you forget in a drawer. So before Snowbloom, we said no to a lot of others: pieces that looked good in photos but felt cheap in the hand, posts that irritated the ear, stones that went dull.",
-        "Snowbloom made the cut. Cubic zirconia set in a flower that catches every bit of light, on 925 sterling silver posts that are gentle on the ear, and light enough (about 4.3 g for the pair) to forget you’re wearing them."
+        "We didn’t want to make another piece of jewelry you forget in a drawer. So before Snowbloom, we threw out a lot of drafts: designs that looked good on screen but felt cheap in the hand, posts that irritated the ear, stones that lost their sparkle.",
+        "Snowbloom is what survived. We shaped the flower so its cubic zirconia catches every bit of light. We chose 925 sterling silver posts because they’re gentle on the ear. And we kept the pair light, about 4.3 g, so you forget you’re wearing them."
       ],
-      closing: "Ravens have always collected what glitters. We just got pickier about it."   // shown as a closing line in the italic serif ("" hides it)
+      closing: "Ravens have always collected what glitters."   // shown as a closing line in the italic serif ("" hides it)
     },
 
     // 3–4 highlights. Icons: gem, feather, shield, sparkle, gift, moon, heart, globe, lock, truck, return, mail
     features: [
-      { icon: "gem",     title: "A flower of light",    text: "Cubic zirconia stones set in a flower that catches every bit of light." },
+      { icon: "gem",     title: "A flower of light",    text: "Cubic zirconia stones set in a 16 mm flower that catches every bit of light." },
       { icon: "feather", title: "Light as a feather",   text: "About 4.3 g for the pair, so you can wear them all night." },
       { icon: "moon",    title: "Made for after dark",  text: "Gothic elegance that works with black lace as well as a plain tee, day or night." },
       { icon: "shield",  title: "925 silver posts",     text: "The part that goes through your ear is 925 sterling silver." }
@@ -320,7 +331,7 @@ window.RAVENS_CONFIG = {
     details: {
       material: "925 sterling silver posts",  // the flower setting: add its metal once the supplier confirms it in writing
       stone: "Cubic zirconia (lab-created)",
-      dimensions: "",                        // TODO_DIMENSIONS: flower diameter, e.g. "Flower 25 mm across" (row stays hidden while empty)
+      dimensions: "Flower 16 mm across",
       weight: "About 4.3 g per pair",        // from the supplier listing: weigh your own sample to confirm
       care: [
         "Take it off before showering, swimming or exercising.",

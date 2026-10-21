@@ -545,6 +545,41 @@ h1, h2, h3 {
   user-select: none;
 }
 .gallery__zoom:focus-visible { outline-offset: -4px; }
+/* Highlights on the first product photo: icon + text in a column on the left.
+   Sizes are relative to the photo width (cqw), so they scale with it on every screen. */
+.gallery__slide { position: relative; container-type: inline-size; }
+.photo-highlights {
+  position: absolute;
+  top: 46%;
+  left: 4%;
+  display: grid;
+  gap: 3.4cqw;
+  width: 20cqw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #fff;
+  text-align: center;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.photo-highlights__item { display: grid; justify-items: center; gap: 1.3cqw; }
+/* very small phones: tighter column so it clears the "Tap to enlarge" label */
+@container (max-width: 300px) {
+  .photo-highlights { top: 44%; gap: 2cqw; }
+}
+.photo-highlights__icon { display: grid; place-items: center; }
+.photo-highlights__icon .icon { width: clamp(20px, 7cqw, 40px); height: clamp(20px, 7cqw, 40px); stroke-width: 1.4; }
+.photo-highlights__text {
+  font-size: clamp(9px, 2.6cqw, 13px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+  text-wrap: balance;
+}
+
 .gallery__nav {
   position: absolute;
   top: 50%;

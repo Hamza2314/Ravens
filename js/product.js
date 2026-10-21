@@ -115,7 +115,9 @@
     const prev = $('.gallery__nav--prev', gallery);
     const next = $('.gallery__nav--next', gallery);
     const n = images.length;
-    const lightboxItems = images.map((im) => ({ src: im.src, alt: im.alt }));
+    // Tapping a photo opens its "zoom" version when there is one (e.g. the main photo without room for highlights)
+    const lightboxItems = images.map((im) => ({ src: hasValue(im.zoom) ? im.zoom : im.src, alt: im.alt }));
+    const highlights = (P.photoHighlights || []).filter((x) => x && hasValue(x.text));
 
     images.forEach((im, i) => {
       track.append(
@@ -125,7 +127,15 @@
               src: im.src, alt: im.alt || '', width: 1200, height: 1200, draggable: 'false', decoding: 'async',
               loading: i === 0 ? 'eager' : 'lazy', fetchpriority: i === 0 ? 'high' : null
             }),
-            h('span', { class: 'visually-hidden' }, ` (${L.enlarge})`)))
+            h('span', { class: 'visually-hidden' }, ` (${L.enlarge})`)),
+          // Highlights on the first photo: icon + short text, in a column on the left
+          i === 0 && highlights.length
+            ? h('ul', { class: 'photo-highlights', 'aria-label': 'Highlights' },
+                highlights.map((x) => h('li', { class: 'photo-highlights__item' },
+                  h('span', { class: 'photo-highlights__icon' }, icon(x.icon, 24)),
+                  // keep numbers and units together on one line ("4.3 g", "16 mm")
+                  h('span', { class: 'photo-highlights__text' }, tpl(x.text).replace(/(\d)\s+(mm|cm|g)\b/gi, '$1 $2')))))
+            : null)
       );
       if (n > 1) {
         thumbs.append(
